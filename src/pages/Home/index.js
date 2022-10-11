@@ -1,11 +1,15 @@
 import React from 'react';
 import { View, Text , StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons'
+import { useNavigation} from '@react-navigation/native'
 
 import Books from '../../component/Books';
 
 
 export default function Home() {
+
+    const navigation = useNavigation
+
  return (
    <View  style ={styles.container}>
         <View style ={styles.header}>
@@ -35,10 +39,10 @@ export default function Home() {
             <Text style ={styles.text}> LANCAMENTOS </Text>
 
             <View style = {{flexDirection:'row', justifyContent: 'space-around' }}>
-                <Books img={require('../../assets/1.jpg')} cost="RESERVAR" onClick= {() => alert('Clicou')}>
+                <Books img={require('../../assets/1.jpg')} cost="RESERVAR" onClick= {() => navigation.navigate('Detail')}>
                     Pense em Python
                 </Books>
-                <Books img={require('../../assets/2.jpg')} cost="RESERVAR" onClick= {() => alert('Clicou')}>
+                <Books img={require('../../assets/2.jpg')} cost="RESERVAR" onClick= {() => navigation.navigate('Detail')}>
                     Python Fluente 
                 </Books>               
             </View>
