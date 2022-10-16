@@ -8,12 +8,12 @@ function filterDesc(desc){
            return desc; 
     }
 
-    return `${desc.substring(0,22)}...`;
+    return `${desc.substring(0,23)}...`;
 }
 
 
  return (
-   <TouchableOpacity style = {styles.contairner} onPress ={props.onClick}>
+   <TouchableOpacity style = {styles.container} onPress ={props.onClick}>
         <Image
         source={props.img}
         style ={styles.bookImg}
@@ -29,14 +29,14 @@ function filterDesc(desc){
 }
 
 const styles = StyleSheet.create({
-    contairner:{
+    container:{
         paddingVertical:'2%',
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: "center",
+        justifyContent: "center"
     },
     bookImg:{
-        width:175,
-        height: 175,
+        width:170,
+        height: 170
     },
     bookTxt:{
         fontSize: 16

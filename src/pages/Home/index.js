@@ -8,20 +8,21 @@ import Books from '../../component/Books';
 
 export default function Home() {
 
-    const navigation = useNavigation
+    const navigation = useNavigation();
 
  return (
-   <View  style ={styles.container}>
+   <View  style ={styles.Container}>
         <View style ={styles.header}>
             <Image
             source={require('../../assets/cabecalho.jpg')}
+            style={styles.Image}
             />
 
             <View style = {styles.textContainer}>
                 <Text style = {styles.text}>Livros</Text>
                 <Text style = {[styles.text, {color: '#CECECF'}]}>-</Text>
                 <Text style = {[styles.text, {color: '#CECECF'}]}>Generos</Text>
-                 <TouchableOpacity style = {{position: 'absolute',right: 0, alignSelf: 'center' }}>
+                 <TouchableOpacity style = {{position: 'absolute',right: 0, alignSelf: "center" }}>
                     <MaterialIcons
                     name ='filter-list'
                     size={24}
@@ -30,6 +31,7 @@ export default function Home() {
                  </TouchableOpacity>
             </View>
         </View>
+
 
         <View style ={styles.line}/>
         
@@ -48,32 +50,32 @@ export default function Home() {
             </View>
 
             <View style = {{flexDirection:'row', justifyContent: 'space-around' }}>
-                <Books img={require('../../assets/3.jpg')} cost="RESERVAR" onClick= {() => alert('Clicou')}>
-                JavaScript
+                <Books img={require('../../assets/3.jpg')} cost="RESERVAR" onClick= {() => navigation.navigate('Detail')}>
+                    JavaScript
                 </Books>
-                <Books img={require('../../assets/4.jpg')} cost="RESERVAR" onClick= {() => alert('Clicou')}>
-                    JavaScript - Programacao 
-                </Books>                           
+                <Books img={require('../../assets/4.jpg')} cost="RESERVAR" onClick= {() => navigation.navigate('Detail')}>
+                    Programacao em JavaScript 
+                </Books>               
             </View>
 
             <View style = {{flexDirection:'row', justifyContent: 'space-around' }}>
-                <Books img={require('../../assets/3.jpg')} cost="RESERVAR" onClick= {() => alert('Clicou')}>
-                JavaScript
+                <Books img={require('../../assets/5.jpg')} cost="RESERVAR" onClick= {() => navigation.navigate('Detail')}>
+                    Lógica de programacao e Algoritimos com JavaScript
                 </Books>
-                <Books img={require('../../assets/4.jpg')} cost="RESERVAR" onClick= {() => alert('Clicou')}>
-                    JavaScript - Programacao 
-                </Books>                           
+                <Books img={require('../../assets/6.jpg')} cost="RESERVAR" onClick= {() => navigation.navigate('Detail')}>
+                    JavaScript - Alto Desempenho 
+                </Books>               
             </View>
 
 
-
         </ScrollView>
+
    </View>
   );
 }
 
 const styles = StyleSheet.create({
-    conatiner:{
+    Container:{
         flex:1,
         width:'100%',
         backgroundColor: '#FFF'
@@ -86,8 +88,8 @@ const styles = StyleSheet.create({
     },
     textContainer:{
         flexDirection:'row',
-        marginVertical: '3%',
-        marginHorizontal:'8%'
+        marginVertical: '5%',
+        marginHorizontal:'5%'
     },
     text:{
         fontFamily: 'Anton_400Regular',
